@@ -6,7 +6,7 @@
 /*   By: kpineda- <kpineda-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:36:18 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/13 21:03:10 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/10/13 22:24:05 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ PhoneBook::PhoneBook()
     std::cout << "\033[31mEXIT\033[0m: exit the program" << std::endl;
 
 	contactCount = 0;
+	contactAmount = 0;
 };
 
 std::string PhoneBook::newContactInfo(std::string info)
@@ -57,11 +58,44 @@ void PhoneBook::Add()
 	contacts[contactCount].contactInfo.darkestSecret = newContactInfo("Darkest Secret");
 	std::cout << "Contact saved!" << std::endl;
 	contactCount++;
+	if (contactAmount < 8)
+		contactAmount++;
 };
+
+std::string	PhoneBook::ShellSize(std::string info)
+{
+	
+	if (info.length() > 10)
+		return info.substr(0, 9) + ".";
+	else
+		return std::string(10 - info.length(), ' ') + info;
+}
+
+void	PhoneBook::printTable()
+{
+	std::cout << "+------+----------+----------+----------+"<< std::endl;
+    std::cout << "| Index| FirstName|  LastName|  Nickname|"<< std::endl;
+    std::cout << "+------+----------+----------+----------+"<< std::endl;
+	
+	for (int i= 0; i < contactAmount; i++)
+	{
+		std::cout << "|     " << i + 1 << "|";
+		std::cout << ShellSize(contacts[i].contactInfo.firstName) << "|";
+		std::cout << ShellSize(contacts[i].contactInfo.lastName) << "|";
+		std::cout << ShellSize(contacts[i].contactInfo.nickname) << "|";
+		std::cout << std::endl;
+	}
+	for (int i = contactAmount; i < 8; i++)
+	{
+		std::cout << "|     " << i + 1;
+		std::cout << "|          |          |          |"<< std::endl;
+    }
+    std::cout << "+------+----------+----------+----------+"<< std::endl;
+}
 
 void PhoneBook::Search()
 {
-	
+	printTable();
 };
 
 PhoneBook::~PhoneBook()
