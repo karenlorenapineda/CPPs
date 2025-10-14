@@ -6,7 +6,7 @@
 /*   By: kpineda- <kpineda-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:36:23 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/13 19:47:47 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:19:27 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <iostream>
 # include <string>
+# include <sstream>
 
 struct	Info
 {
@@ -30,8 +31,10 @@ class Contact
 {
 public:
 	Info contactInfo;
+	
 	Contact();
 	~Contact();
+	void VisualiceInfo();
 	
 };
 

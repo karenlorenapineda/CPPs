@@ -6,7 +6,7 @@
 /*   By: kpineda- <kpineda-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:36:18 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/13 22:24:05 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:45:37 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,13 @@ std::string	PhoneBook::ShellSize(std::string info)
 
 void	PhoneBook::printTable()
 {
-	std::cout << "+------+----------+----------+----------+"<< std::endl;
-    std::cout << "| Index| FirstName|  LastName|  Nickname|"<< std::endl;
-    std::cout << "+------+----------+----------+----------+"<< std::endl;
+	std::cout << "+----------+----------+----------+----------+"<< std::endl;
+    std::cout << "|     Index| FirstName|  LastName|  Nickname|"<< std::endl;
+    std::cout << "+----------+----------+----------+----------+"<< std::endl;
 	
 	for (int i= 0; i < contactAmount; i++)
 	{
-		std::cout << "|     " << i + 1 << "|";
+		std::cout << "|         " << i + 1 << "|";
 		std::cout << ShellSize(contacts[i].contactInfo.firstName) << "|";
 		std::cout << ShellSize(contacts[i].contactInfo.lastName) << "|";
 		std::cout << ShellSize(contacts[i].contactInfo.nickname) << "|";
@@ -87,16 +87,30 @@ void	PhoneBook::printTable()
 	}
 	for (int i = contactAmount; i < 8; i++)
 	{
-		std::cout << "|     " << i + 1;
+		std::cout << "|         " << i + 1;
 		std::cout << "|          |          |          |"<< std::endl;
     }
-    std::cout << "+------+----------+----------+----------+"<< std::endl;
+    std::cout << "+----------+----------+----------+----------+"<< std::endl;
 }
 
 void PhoneBook::Search()
 {
 	printTable();
-};
+	
+	std::cout << "Enter a Index Number: ";
+	
+	std::string line;
+	int index;
+	getline(std::cin, line);
+	
+	std::stringstream sline(line);
+	if (!(sline >> index))
+		std::cout << "Invalid Index" << std::endl;
+	else if (index > 0 && index <= contactAmount)
+		contacts[index - 1].VisualiceInfo();
+	else
+		std::cout << "Out of range!" << std::endl;
+}
 
 PhoneBook::~PhoneBook()
 {
