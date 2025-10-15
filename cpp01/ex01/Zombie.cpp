@@ -6,7 +6,7 @@
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 20:33:55 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/15 18:59:43 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/10/15 19:01:26 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,14 @@ Zombie::Zombie(std::string name)
 	std::cout << name << " aparece" << std::endl;
 }
 
-Zombie::~Zombie() 
+Zombie::~Zombie()
 {
 	std::cout << _name << " desaparece" << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	_name = name;
 }
 
 void Zombie::announce(void)

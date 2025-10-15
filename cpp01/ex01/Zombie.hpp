@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 20:33:55 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/15 18:59:43 by kpineda-         ###   ########.fr       */
+/*   Created: 2025/10/14 20:33:58 by kpineda-          #+#    #+#             */
+/*   Updated: 2025/10/15 18:58:40 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
 
-Zombie::Zombie()
-{
-	std::cout << "Zombie aparece" << std::endl;
-}
+#define ZOMBIE_HPP
 
-Zombie::Zombie(std::string name)
-{
-	_name = name;
-	std::cout << name << " aparece" << std::endl;
-}
+#include <iostream>
+#include <string>
+#include <sstream>
 
-Zombie::~Zombie() 
+class Zombie
 {
-	std::cout << _name << " desaparece" << std::endl;
-}
+	std::string _name;
 
-void Zombie::announce(void)
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+public:
+	Zombie();
+	Zombie(std::string name);
+	~Zombie();
+	void setName(std::string name);
+
+	void announce(void);
+};
+
+#endif
