@@ -6,13 +6,13 @@
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:21:51 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/15 21:34:28 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/10/28 21:08:44 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
+#ifndef HUMANB_HPP
 
-#define HUMANA_HPP
+#define HUMANB_HPP
 
 #include "Weapon.hpp"
 #include <iostream>
@@ -21,14 +21,17 @@
 
 class HumanB
 {
-	Weapon weapon;
+	Weapon* weapon;
 	std::string name;
 	HumanB();
 
 public:
 	HumanB(std::string newName);
-	HumanB(std::string newName, Weapon newWeapon);
+	HumanB(std::string newName, Weapon* newWeapon);
+	void setWeapon(Weapon* newWeapon);
 	~HumanB();
 	
-	void atack();
+	void attack();
 };
+
+#endif
