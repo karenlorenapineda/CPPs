@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 21:11:26 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/12/28 13:50:46 by kpineda-         ###   ########.fr       */
+/*   Created: 2025/12/28 13:34:51 by kpineda-          #+#    #+#             */
+/*   Updated: 2025/12/28 13:35:03 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-Weapon::Weapon(std::string name)
+int main()
 {
-	type = name;
-}
-
-Weapon::~Weapon()
-{
-	
-}
-
-std::string Weapon::getType()
-{
-	return (type);
-}
-
-void Weapon::setType(std::string newType)
-{
-	std::cout << "Weapon of type: " << type;
-	type = newType;
-	std::cout << ". Changes to: " << type << std::endl;
+	Harl harl = Harl();
+	sleep(1);
+	std::cout << "#DEBUG#" << std::endl;
+	harl.complain("DEBUG");
+	sleep(1);
+	std::cout << "#INFO#" << std::endl;
+	harl.complain("INFO");
+	sleep(1);
+	std::cout << "#WARNING#" << std::endl;
+	harl.complain("WARNING");
+	sleep(1);
+	std::cout << "#ERROR#" << std::endl;
+	harl.complain("ERROR");
+	sleep(1);
+	return 0;
 }

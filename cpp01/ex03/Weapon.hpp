@@ -6,7 +6,7 @@
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:00:47 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/28 20:47:07 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/12/28 13:48:37 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	Weapon(std::string name);
 	~Weapon();
 	
-	const std::string getType();
+	std::string getType();
 	void setType(std::string newType);
 };
 

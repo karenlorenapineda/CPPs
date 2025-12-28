@@ -6,7 +6,7 @@
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:21:51 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/28 21:08:44 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/12/28 13:43:25 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class HumanB
 public:
 	HumanB(std::string newName);
 	HumanB(std::string newName, Weapon* newWeapon);
-	void setWeapon(Weapon* newWeapon);
 	~HumanB();
 	
+	void setWeapon(Weapon* newWeapon);
 	void attack();
 };
 

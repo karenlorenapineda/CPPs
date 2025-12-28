@@ -6,20 +6,26 @@
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:27:14 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/28 21:18:37 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/12/28 13:53:18 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string newName, Weapon& newWeapon): weapon(newWeapon)
+HumanA::HumanA(std::string newName, Weapon& newWeapon): name(newName), weapon(newWeapon)
 {
-	name = newName;
+	std::cout << name << " has now the weapon of type: ";
+	std::cout << weapon.getType() << std::endl;
 }
 
 HumanA::~HumanA()
 {
 	
+}
+
+void HumanA::setType(std::string type)
+{
+	weapon.setType(type);
 }
 
 void HumanA::attack()

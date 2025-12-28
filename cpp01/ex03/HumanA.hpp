@@ -6,7 +6,7 @@
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:21:25 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/10/28 20:51:22 by kpineda-         ###   ########.fr       */
+/*   Updated: 2025/12/28 13:51:45 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 class HumanA
 {
-	Weapon& weapon;
 	std::string name;
+	Weapon& weapon;
 	HumanA();
 
 public:
@@ -30,6 +30,7 @@ public:
 	HumanA(std::string newName, Weapon& newWeapon);
 	~HumanA();
 	
+	void setType(std::string type);
 	void attack();
 };
 

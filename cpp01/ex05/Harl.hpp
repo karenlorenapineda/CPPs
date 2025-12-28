@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpineda- <kpineda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 21:11:26 by kpineda-          #+#    #+#             */
-/*   Updated: 2025/12/28 13:50:46 by kpineda-         ###   ########.fr       */
+/*   Created: 2025/12/28 13:34:40 by kpineda-          #+#    #+#             */
+/*   Updated: 2025/12/28 13:34:42 by kpineda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef HARL_HPP
 
-Weapon::Weapon(std::string name)
-{
-	type = name;
-}
+# define HARL_HPP
 
-Weapon::~Weapon()
+# include <iostream>
+# include <string>
+# include <unistd.h>
+
+class Harl
 {
+
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+
+public:
+
+	Harl(void);
+	~Harl(void);
 	
-}
+	void complain( std::string level );
+};
 
-std::string Weapon::getType()
-{
-	return (type);
-}
-
-void Weapon::setType(std::string newType)
-{
-	std::cout << "Weapon of type: " << type;
-	type = newType;
-	std::cout << ". Changes to: " << type << std::endl;
-}
+#endif
